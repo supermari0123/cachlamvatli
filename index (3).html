@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phương Pháp Luận Giải Các Dạng Bài Tập Vật Lý</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #34495e;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 25px auto;
+            background: #ffffff;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .toc-container {
+            background: #eaf2f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #d4e6f1;
+        }
+        .toc-container h2 {
+            margin-top: 0;
+            color: #2980b9;
+            text-align: center;
+        }
+        .toc-columns {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+            column-gap: 40px;
+        }
+        .toc-columns ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            break-inside: avoid-column;
+        }
+        .toc-columns li { margin-bottom: 8px; }
+        .toc-columns li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        .toc-columns li a:hover { color: #3498db; }
+        .toc-section-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 12px;
+            color: #16a085;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        h1 { font-size: 2.5em; text-align: center; border-bottom: 3px solid #3498db; padding-bottom: 15px; margin-bottom: 30px;}
+        h2 { font-size: 2.1em; margin-top: 40px; border-bottom: 2px solid #2980b9; padding-bottom: 10px; }
+        h3 { font-size: 1.7em; margin-top: 25px; border-bottom: 1px solid #bdc3c7; padding-bottom: 8px; color: #16a085; }
+        .formula-box, .strategy-box {
+            background-color: #fdfefe;
+            border: 1px solid #e5e8e8;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+        }
+        .strategy-box { background-color: #fef9e7; border-left-color: #f39c12; }
+        .step {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .step::before {
+            content: '►';
+            position: absolute;
+            left: 0;
+            color: #c0392b;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Phương Pháp Luận Giải Các Dạng Bài Tập Vật Lý</h1>
+    
+    <div class="toc-container">
+        <h2>Mục Lục Các Dạng Bài</h2>
+        <div class="toc-columns">
+            <ul>
+                <li class="toc-section-title"><a href="#co-hoc">I. Cơ Học</a></li>
+                <li><a href="#ch-donghoc">1. Động học chất điểm</a></li>
+                <li><a href="#ch-dongluc">2. Động lực học chất điểm</a></li>
+                <li><a href="#ch-canbang">3. Cân bằng của vật rắn</a></li>
+                <li><a href="#ch-nangluong">4. Năng lượng & Va chạm</a></li>
+                <li><a href="#ch-daodong">5. Dao động cơ</a></li>
+                <li class="toc-section-title"><a href="#nhiet-hoc">II. Nhiệt Học</a></li>
+                <li><a href="#nh-canbang">1. Cân bằng nhiệt & Chuyển pha</a></li>
+                <li><a href="#nh-khilytuong">2. Chất khí & Quá trình</a></li>
+                <li><a href="#nh-nguyenly1">3. Nguyên lý I NĐLH</a></li>
+            </ul>
+            <ul>
+                <li class="toc-section-title"><a href="#song-hoc">III. Sóng Học</a></li>
+                <li><a href="#sh-songco">1. Sóng cơ & Phương trình sóng</a></li>
+                <li><a href="#sh-giao-thoa-co">2. Giao thoa sóng cơ</a></li>
+                <li><a href="#sh-songdung">3. Sóng dừng</a></li>
+                <li><a href="#sh-songam">4. Sóng âm & Doppler</a></li>
+                <li><a href="#sh-anhsang">5. Giao thoa ánh sáng</a></li>
+                <li class="toc-section-title"><a href="#dien-tu">IV. Điện - Từ Học</a></li>
+                <li><a href="#dt-luctu">1. Lực từ & Cảm ứng từ</a></li>
+                <li><a href="#dt-camung">2. Cảm ứng điện từ</a></li>
+                <li><a href="#dt-mayphat">3. Máy phát điện & Động cơ</a></li>
+                <li class="toc-section-title"><a href="#hat-nhan">V. Vật Lý Hạt Nhân</a></li>
+                <li><a href="#hn-cautao">1. Cấu tạo & Năng lượng liên kết</a></li>
+                <li><a href="#hn-phongxa">2. Phóng xạ & Định tuổi</a></li>
+                <li><a href="#hn-phanung">3. Phản ứng hạt nhân</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <section id="co-hoc">
+        <h2>I. Cơ Học</h2>
+        <h3 id="ch-donghoc">1. Dạng bài: Động học chất điểm</h3>
+        <p>Mô tả chuyển động (vị trí, vận tốc, gia tốc) mà không xét đến nguyên nhân gây ra nó.</p>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Chọn hệ quy chiếu.</strong> Gồm trục tọa độ, gốc thời gian và chiều dương.</div>
+        <div class="step"><strong>Bước 2: Phân tích các giai đoạn chuyển động.</strong> Thẳng đều, nhanh dần đều, chậm dần đều...</div>
+        <div class="step"><strong>Bước 3: Viết phương trình cho từng giai đoạn.</strong> Sử dụng các công thức chuyển động tương ứng.</div>
+        <div class="step"><strong>Bước 4: Sử dụng điều kiện nối tiếp.</strong> Vận tốc cuối của giai đoạn này là vận tốc đầu của giai đoạn kế tiếp.</div>
+        <div class="strategy-box">
+            <strong>Tư duy chiến lược:</strong>
+            <ul>
+                <li>Đọc kỹ các từ khóa: "bắt đầu chuyển động" (v₀=0), "dừng lại" (v=0), "chuyển động đều" (a=0).</li>
+                <li>Chuyển động chậm dần đều có a và v trái dấu.</li>
+            </ul>
+        </div>
+        
+        <h3 id="ch-dongluc">2. Dạng bài: Động lực học chất điểm (Định luật Newton)</h3>
+        <p>Phân tích lực tác dụng để tìm ra gia tốc và mô tả chuyển động.</p>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Vẽ sơ đồ lực (FBD).</strong> Phân tích TẤT CẢ các lực tác dụng lên vật.</div>
+        <div class="step"><strong>Bước 2: Viết phương trình Định luật II Newton dạng véctơ.</strong> <code>&Sigma;<strong>F</strong> = m<strong>a</strong></code>.</div>
+        <div class="step"><strong>Bước 3: Chiếu lên các trục tọa độ Ox, Oy.</strong>
+            <ul>
+                <li>Oy (vuông góc chuyển động): <code>&Sigma;F<sub>y</sub> = 0</code> &rArr; Tìm phản lực N.</li>
+                <li>Ox (theo chiều chuyển động): <code>&Sigma;F<sub>x</sub> = ma</code> &rArr; Tìm gia tốc a.</li>
+            </ul>
+        </div>
+        <div class="step"><strong>Bước 4: Giải toán động học.</strong> Dùng gia tốc a vừa tìm được để tính v, s, t...</div>
+        
+        <h3 id="ch-canbang">3. Dạng bài: Cân bằng của vật rắn</h3>
+        <p>Điều kiện để vật rắn đứng yên hoặc chuyển động thẳng đều.</p>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Phân tích tất cả các ngoại lực tác dụng lên vật.</strong></div>
+        <div class="step"><strong>Bước 2: Áp dụng điều kiện cân bằng lực.</strong> Hợp lực bằng không.
+            <div class="formula-box">&Sigma;<strong>F</strong> = 0</div>
+        </div>
+        <div class="step"><strong>Bước 3: Áp dụng điều kiện cân bằng momen.</strong> Tổng momen các lực đối với một điểm bất kỳ bằng không.
+            <div class="formula-box">&Sigma;M<sub>(O)</sub> = 0</div>
+        </div>
+        <div class="strategy-box">
+            <strong>Tư duy chiến lược:</strong> Chọn trục quay tại điểm có nhiều lực đi qua nhất để triệt tiêu momen của các lực đó, làm phương trình đơn giản hơn.
+        </div>
+
+        <h3 id="ch-nangluong">4. Dạng bài: Năng lượng & Va chạm</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Xác định hệ khảo sát là hệ kín hay không.</strong></div>
+        <div class="step"><strong>Bước 2: Áp dụng Định luật bảo toàn động lượng (luôn đúng cho hệ kín).</strong>
+            <div class="formula-box">m₁<strong>v₁</strong> + m₂<strong>v₂</strong> = m₁<strong>v₁'</strong> + m₂<strong>v₂'</strong></div>
+        </div>
+        <div class="step"><strong>Bước 3: Phân loại va chạm để xét năng lượng.</strong>
+            <ul>
+                <li><strong>Va chạm mềm:</strong> Vật dính vào nhau, động năng giảm.</li>
+                <li><strong>Va chạm đàn hồi:</strong> Động năng bảo toàn.
+                    <div class="formula-box">(1/2)m₁v₁² + (1/2)m₂v₂² = (1/2)m₁v₁'² + (1/2)m₂v₂'²</div>
+                </li>
+            </ul>
+        </div>
+        <div class="step"><strong>Bước 4: Giải hệ phương trình động lượng và năng lượng.</strong></div>
+
+        <h3 id="ch-daodong">5. Dạng bài: Dao động cơ</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Xác định các thông số cơ bản (ω, T, f).</strong> <code>&omega; = &radic;(k/m)</code> hoặc <code>&omega; = &radic;(g/l)</code>.</div>
+        <div class="step"><strong>Bước 2: Sử dụng các hệ thức độc lập và bảo toàn năng lượng.</strong>
+            <div class="formula-box">A² = x² + v²/&omega;²
+W = (1/2)mv² + (1/2)kx² = (1/2)kA²</div>
+        </div>
+        <div class="step"><strong>Bước 3: Tìm A và &phi; từ điều kiện ban đầu (t=0).</strong>
+            <div class="formula-box">x₀ = Acos(&phi;)
+v₀ = -A&omega;sin(&phi;)</div>
+        </div>
+        <div class="step"><strong>Bước 4: Sử dụng vòng tròn lượng giác.</strong> Đây là công cụ cực mạnh để giải các bài toán về thời gian, quãng đường, số lần vật qua một vị trí.</div>
+    </section>
+
+    <section id="nhiet-hoc">
+        <h2>II. Nhiệt Học</h2>
+        <h3 id="nh-canbang">1. Dạng bài: Cân bằng nhiệt & Chuyển pha</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Xác định các vật trao đổi nhiệt.</strong></div>
+        <div class="step"><strong>Bước 2: (QUAN TRỌNG) Kiểm tra khả năng chuyển pha hoàn toàn.</strong>
+             <ul>
+                <li>Tính nhiệt lượng <strong>tối đa</strong> mà vật nóng có thể tỏa ra để nguội về nhiệt độ chuyển pha: <code>Q<sub>tỏa_max</sub></code>.</li>
+                <li>Tính nhiệt lượng <strong>cần thiết</strong> để vật lạnh chuyển pha hoàn toàn: <code>Q<sub>thu_pha</sub></code>.</li>
+                <li>So sánh chúng để biết trạng thái cuối cùng của hệ.</li>
+            </ul>
+        </div>
+        <div class="step"><strong>Bước 3: Viết phương trình cân bằng nhiệt chi tiết (Q<sub>tỏa</sub> = Q<sub>thu</sub>) và giải.</strong></div>
+        <div class="formula-box">
+Nhiệt thay đổi nhiệt độ: Q = mc&Delta;t
+Nhiệt chuyển pha: Q = &lambda;m (nóng chảy) ; Q = Lm (hóa hơi)
+        </div>
+        
+        <h3 id="nh-khilytuong">2. Dạng bài: Chất khí & Các quá trình</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Xác định loại quá trình.</strong> Đẳng nhiệt, đẳng tích, đẳng áp, hay quá trình bất kỳ?</div>
+        <div class="step"><strong>Bước 2: Tóm tắt 2 trạng thái (p₁, V₁, T₁) và (p₂, V₂, T₂).</strong></div>
+        <div class="step"><strong>Bước 3: ĐỔI NHIỆT ĐỘ SANG KELVIN (K).</strong> <code>T(K) = t(°C) + 273</code>.</div>
+        <div class="step"><strong>Bước 4: Áp dụng công thức tương ứng.</strong></div>
+        <div class="formula-box">
+Phương trình trạng thái: p₁V₁/T₁ = p₂V₂/T₂
+Phương trình Clapeyron (khi có khối lượng/số mol): pV = nRT
+        </div>
+        
+        <h3 id="nh-nguyenly1">3. Dạng bài: Nguyên lý I Nhiệt động lực học</h3>
+        <p>Phân tích sự biến đổi năng lượng của một khối khí.</p>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Áp dụng công thức Nguyên lý I.</strong> <code>&Delta;U = A + Q</code>.</div>
+        <div class="step"><strong>Bước 2: Xác định dấu của A và Q theo quy ước.</strong>
+            <ul>
+                <li>Hệ nhận nhiệt: Q > 0 ; Hệ truyền nhiệt: Q < 0.</li>
+                <li>Hệ nhận công: A > 0 ; Hệ sinh công: A < 0.</li>
+            </ul>
+        </div>
+        <div class="step"><strong>Bước 3: Tính công A.</strong>
+            <ul>
+                <li>Đẳng tích: A = 0.</li>
+                <li>Đẳng áp: Công hệ sinh ra A' = p.&Delta;V. Suy ra A = -p.&Delta;V.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="song-hoc">
+        <h2>III. Sóng Học</h2>
+        <h3 id="sh-songco">1. Dạng bài: Sóng cơ & Phương trình sóng</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Tìm các đại lượng cơ bản của sóng.</strong> <code>&lambda; = v.T = v/f</code>.</div>
+        <div class="step"><strong>Bước 2: Viết phương trình sóng.</strong> <code>u<sub>M</sub> = A.cos(&omega;t - 2&pi;x/&lambda;)</code>.</div>
+        <div class="step"><strong>Bước 3: Xét độ lệch pha.</strong> <code>&Delta;&phi; = 2&pi;d/&lambda;</code>. Từ đó suy ra các điều kiện cùng pha, ngược pha.</div>
+
+        <h3 id="sh-giao-thoa-co">2. Dạng bài: Giao thoa sóng cơ</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Tính bước sóng &lambda;.</strong></div>
+        <div class="step"><strong>Bước 2: Áp dụng điều kiện cực đại, cực tiểu.</strong> (Cho hai nguồn cùng pha)
+            <div class="formula-box">
+Cực đại giao thoa: d₂ - d₁ = k&lambda;
+Cực tiểu giao thoa: d₂ - d₁ = (k + 0.5)&lambda;
+            </div>
+        </div>
+        <div class="step"><strong>Bước 3: Tìm số đường CĐ/CT trên đoạn thẳng nối 2 nguồn S₁S₂.</strong>
+             <div class="formula-box">-S₁S₂/&lambda; < k < S₁S₂/&lambda;</div>
+        </div>
+        
+        <h3 id="sh-songdung">3. Dạng bài: Sóng dừng</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Xác định loại sóng dừng.</strong> Hai đầu cố định, một đầu cố định - một đầu tự do.</div>
+        <div class="step"><strong>Bước 2: Áp dụng điều kiện về chiều dài dây.</strong>
+            <div class="formula-box">
+Hai đầu cố định: l = k(&lambda;/2)  (k là số bó sóng)
+Một đầu cố định, một tự do: l = (2k+1)(&lambda;/4) (k+1 là số bó sóng)
+            </div>
+        </div>
+
+        <h3 id="sh-songam">4. Dạng bài: Sóng âm & Doppler</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Tính các mức cường độ âm.</strong>
+             <div class="formula-box">L (dB) = 10 * log(I/I₀)</div>
+        </div>
+        <div class="step"><strong>Bước 2 (Hiệu ứng Doppler): Xác định các vận tốc.</strong> v (sóng), vₒ (người quan sát), vₛ (nguồn).</div>
+        <div class="step"><strong>Bước 3: Áp dụng công thức Doppler.</strong> "Lại gần" làm tăng tần số, "ra xa" làm giảm tần số.
+             <div class="formula-box">f' = f * (v &pm; v<sub>o</sub>) / (v &mp; v<sub>s</sub>)</div>
+        </div>
+
+        <h3 id="sh-anhsang">5. Dạng bài: Giao thoa ánh sáng</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Tính khoảng vân <code>i = &lambda;D/a</code>.</strong> Đây là bước quan trọng nhất.</div>
+        <div class="step"><strong>Bước 2: Viết công thức vị trí vân sáng, tối.</strong>
+            <div class="formula-box">Vị trí vân sáng: x<sub>s</sub> = k.i
+Vị trí vân tối: x<sub>t</sub> = (k + 0.5)i</div>
+        </div>
+        <div class="step"><strong>Bước 3: Giải các yêu cầu cụ thể.</strong> Ví dụ: tìm số vân sáng trong miền L thì giải bất phương trình <code>-L/2 &le; k.i &le; L/2</code>.</div>
+    </section>
+
+    <section id="dien-tu">
+        <h2>IV. Điện - Từ Học</h2>
+        <h3 id="dt-luctu">1. Dạng bài: Lực từ & Cảm ứng từ</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Xác định đối tượng chịu lực (dây dẫn hay điện tích).</strong></div>
+        <div class="step"><strong>Bước 2: Chọn công thức lực (Ampe/Lorentz) và quy tắc bàn tay tương ứng.</strong></div>
+        <div class="step"><strong>Bước 3: Tính toán độ lớn.</strong></div>
+        <div class="formula-box">
+Lực Ampe: F = B.I.L.sin(&theta;)
+Lực Lorentz: f = |q|.v.B.sin(&alpha;)
+        </div>
+
+        <h3 id="dt-camung">2. Dạng bài: Cảm ứng điện từ</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Tính từ thông qua mạch.</strong> <code>&Phi; = NBScos(&alpha;)</code>.</div>
+        <div class="step"><strong>Bước 2: Tìm tốc độ biến thiên của từ thông (đạo hàm).</strong> <code>d&Phi;/dt</code>.</div>
+        <div class="step"><strong>Bước 3: Tính suất điện động cảm ứng.</strong> <code>e<sub>c</sub> = -d&Phi;/dt</code>. Dấu "-" thể hiện định luật Lenxơ.</div>
+
+        <h3 id="dt-mayphat">3. Dạng bài: Máy phát điện & Động cơ</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Tính các thông số của nguồn (ω, Φ₀, E₀, E).</strong>
+            <div class="formula-box">E₀ = &omega;NBS ; E = E₀/&radic;2</div>
+        </div>
+        <div class="step"><strong>Bước 2: Phân tích mạch ngoài và áp dụng Định luật Ôm.</strong>
+            <div class="formula-box">I = E / (Z<sub>tổng</sub>) ; U = I * Z<sub>ngoài</sub></div>
+        </div>
+    </section>
+
+    <section id="hat-nhan">
+        <h2>V. Vật Lý Hạt Nhân</h2>
+        <h3 id="hn-cautao">1. Dạng bài: Cấu tạo & Năng lượng liên kết</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Phân tích cấu tạo hạt nhân <sup>A</sup><sub>Z</sub>X (tìm Z, N).</strong></div>
+        <div class="step"><strong>Bước 2: Tính tổng khối lượng nucleon.</strong> <code>m₀ = Zm<sub>p</sub> + Nm<sub>n</sub></code>.</div>
+        <div class="step"><strong>Bước 3: Tính độ hụt khối.</strong> <code>&Delta;m = m₀ - m<sub>hạt nhân</sub></code>.</div>
+        <div class="step"><strong>Bước 4: Tính năng lượng liên kết và năng lượng liên kết riêng.</strong>
+            <div class="formula-box">W<sub>lk</sub> = &Delta;m * 931.5 (MeV)
+W<sub>lk_riêng</sub> = W<sub>lk</sub> / A</div>
+        </div>
+
+        <h3 id="hn-phongxa">2. Dạng bài: Phóng xạ & Định tuổi</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Nắm vững công thức định luật phóng xạ.</strong></div>
+        <div class="step"><strong>Bước 2: Tìm các đại lượng cần thiết (H₀, H, T) để tính tuổi t.</strong>
+            <div class="formula-box">t = (T/ln2) * ln(H₀/H)</div>
+        </div>
+        <div class="step"><strong>Bước 3: Tính H₀ nếu chưa có.</strong> <code>H₀ = &lambda;N₀ = (ln2/T) * (m₀/M) * N<sub>A</sub></code>.</div>
+
+        <h3 id="hn-phanung">3. Dạng bài: Phản ứng hạt nhân</h3>
+        <h4>Các bước giải</h4>
+        <div class="step"><strong>Bước 1: Viết phương trình và áp dụng bảo toàn số khối, điện tích.</strong></div>
+        <div class="step"><strong>Bước 2: Tính năng lượng phản ứng.</strong>
+            <div class="formula-box">&Delta;E = (m<sub>trước</sub> - m<sub>sau</sub>)c²</div>
+        </div>
+        <div class="step"><strong>Bước 3 (nếu có): Áp dụng bảo toàn động lượng và năng lượng toàn phần.</strong>
+            <div class="formula-box">
+&Sigma;<strong>p</strong><sub>trước</sub> = &Sigma;<strong>p</strong><sub>sau</sub>
+&Delta;E = K<sub>sau</sub> - K<sub>trước</sub>
+p² = 2mK
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+</body>
+</html>
